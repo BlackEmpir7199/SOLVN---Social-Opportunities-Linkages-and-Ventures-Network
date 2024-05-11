@@ -33,6 +33,7 @@ class OutputSocialScore(BaseModel):
     socialImpactText: str = Field(description="Social Impact explanation of the project")
     socialImpactImprovement: str = Field(description="How can the idea score more social impact score")
     socialEstimateCheck: str = Field(description="Identifies if the revenue claim of the project is true or not")
+    riskFactor: str = Field(description="Identifies the risk factor of the project if an investment is being made")
 
     class Config:
         # Define a nested field for descriptions
@@ -84,29 +85,27 @@ def image_analysis(image_urls):
 parser = JsonOutputParser(pydantic_object=OutputSocialScore)
 
 prompt = PromptTemplate(
-    template='''Identify if the text description/documentation of a technological project aimed for social impact contains 
-    the social impact keywords such as {social_impact_keywords}(Note that you can use other words other than the given words also to identify the reliability)
-    . Analyze the image of the prototype (downloaded and saved as img/test.jpg) and the details 
-    of the project given the description is {processed_str}. The rule-based algorithm has provided a score of {social_impact_score} by checking if the 
-    keywords {social_impact_keywords} are present in the given text. So be fair and judge the project given its documentation and image based on the 
-    following criteria such as:
-    - Breadth of Impact –--> A measurement of how many people the project impacts.
-    - Changing Paradigms –--> The degree to which the project encouraged mindset and behavior changes.
-    - Wellbeing --–> The degree to which a person experiences improved quality of life.
-    - Empowerment –--> The degree to which a person or community is empowered to do what they wish to do.
-    - Depth of Impact –--> The degree to which a project provides lasting, positive changes in a person’s life.
-    - Quality of Project Implementation –--> A measure of how well the project was implemented.
-    A few images stored in {image_data} so use those to identify if the image corresponds to their project or not. If it doesn't then, 
-    don't give any social impact credit for it. Give a maximum of 3 points for each criterion where 0 being the lowest and 3 being the highest 
-    (Be very strict when marking these since these can attract potential investors, so think of rating on each criterion from the point of view of the 
-    investor who might be investing in this idea). Hence calculate the social score on a scale of 0 to 10 using the provided points before. 
-    Note that the project should be technical like some app or software or something else and not like an organizing event. If it is, 
-    then give a social impact score of 3 and reason with them that investors need something new in technological advents to invest and hence there is very 
-    low social impact score was given. Note that the field of socialImpactImprovement is required and keep it within 20 words.You need to use these values 
-    to fill up the other values which are given below. Also, do a check on whether the estimated revenue can be made based on the project idea. Make sure you 
-    judge the same projects idea in the same way. If yes, then state it as true, else state it as false.\nThe projectAppId = {projectAppId}, 
-    projectAppName = {projectAppName}, projectName = {projectName}, projectOwner = {projectOwner}, projectEstimate = {projectEstimate}, projectRevenueModel = {projectRevenueModel}, 
-    projectContactInfo = {projectContactInfo}.\n{format_instructions}\n''',
+    template='''Evaluate the social impact and feasibility of a technological project based on its documentation, prototype image, and associated details.
+Identify if the text description/documentation given '{processed_str} of a technological project aimed for social impact contains the social impact keywords such as {social_impact_keywords} (Note that you can use other words other than the given words also to identify the reliability). The rule-based algorithm has provided a score of {social_impact_score} by checking if the keywords {social_impact_keywords} are present in the given text. So be fair and judge the project given its documentation and image based on the following criteria such as:
+- Breadth of Impact –--> A measurement of how many people the project impacts.
+- Changing Paradigms –--> The degree to which the project encouraged mindset and behavior changes.
+- Wellbeing --–> The degree to which a person experiences improved quality of life.
+- Empowerment –--> The degree to which a person or community is empowered to do what they wish to do.
+- Depth of Impact –--> The degree to which a project provides lasting, positive changes in a person’s life.
+- Quality of Project Implementation –--> A measure of how well the project was implemented.
+A few images of the prototype stored in {image_data} so use those to identify if the image corresponds to their project or not. 
+If it doesn't then, don't give any social impact credit for it. Give a maximum of 3 points for each criterion where 0 being the lowest and 3 
+being the highest (Be very strict when marking these since these can attract potential investors, so think of rating on each criterion from 
+the point of view of the investor who might be investing in this idea). Hence calculate the social score on a scale of 3 to 10 using the
+ provided points before. Note that the project should be technical like some app or software or something else and not like an organizing event.
+  If it is, then give a social impact score of 3 and reason with them that investors need something new in technological advents to invest 
+  and hence there is very low social impact score was given. Note that the field of socialImpactImprovement is required and keep it within 
+  20 words. You need to use these values to fill up the other values which are given below. Also, do a check on whether the estimated revenue 
+  can be made based on the project idea. Make sure you judge the same projects idea in the same way. If yes, then state it as true, else state 
+  it as false. Assess the risk factor associated with investing in the project, ranging from 5% (lowest risk) to 95% (highest risk). Consider factors such as market trends, demand and competition, revenue projections and costs, 
+  management team and execution plan, regulatory and legal compliance, technology readiness and disruption risk, macroeconomic and external factors, scalability and sustainability corresponding with 2024. 
+  Give a score considering the same criteria 
+The projectAppId = {projectAppId}, projectAppName = {projectAppName}, projectName = {projectName}, projectOwner = {projectOwner}, projectEstimate = {projectEstimate}, projectRevenueModel = {projectRevenueModel}, projectContactInfo = {projectContactInfo}.\n{format_instructions}\n.''',
 
     input_variables=[
         "social_impact_keywords",

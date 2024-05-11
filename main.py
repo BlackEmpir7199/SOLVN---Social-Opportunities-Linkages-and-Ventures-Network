@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 import os
 
 ###Loading environement variables api keys
-load_dotenv("test.env")
+load_dotenv("ML API Models/test.env")
 
 google_api_key = os.getenv("GOOGLE_API_KEY")
 #print(google_api_key)
