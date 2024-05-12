@@ -1,0 +1,22 @@
+.footer-container {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    font-size: .7rem;
+}
+
+.footer-container span {
+    display: inline-block;
+    font-size: .9rem;
+    font-weight: 100 !important;
+}
+
+.footer-container span svg {
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}

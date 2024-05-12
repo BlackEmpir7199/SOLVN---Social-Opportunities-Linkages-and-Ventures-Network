@@ -39,7 +39,7 @@ const investorProjectDelete = async (req, res, next) => {
     return res.status(200).send(
         {
             status: 200,
-            message: 'The data had been updated to follwing apps',
+            message: 'The data had been deleted',
             data: sendedAppList,
             error: null
         }

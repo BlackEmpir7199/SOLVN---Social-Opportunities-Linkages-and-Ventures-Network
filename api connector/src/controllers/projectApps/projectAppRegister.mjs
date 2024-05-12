@@ -87,7 +87,7 @@ const registerNewProjectApp = async (req, res, next) => {
             {
                 staus: 200,
                 message: "Project app created successfully!",
-                appInvId: thisGuyId
+                appProjId: thisGuyId
             }
         );
     } catch (error) {

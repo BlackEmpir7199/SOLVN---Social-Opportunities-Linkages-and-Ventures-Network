@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "210764241497",
+    "project_id": "peopleprojectapp",
+    "storage_bucket": "peopleprojectapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210764241497:android:979a926f0c3162828f2f48",
+        "android_client_info": {
+          "package_name": "com.mycompany.responsivedashboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210764241497-0l7thchmcb73hj2j9o1rb21hilpk0m3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpEGihG7j1PjDGUf1MUcQv3HZmyMlvx1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210764241497-0l7thchmcb73hj2j9o1rb21hilpk0m3c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "210764241497-kgj83ptcr4fi76ft9da0lcrobqsk909t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.responsivedashboard"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

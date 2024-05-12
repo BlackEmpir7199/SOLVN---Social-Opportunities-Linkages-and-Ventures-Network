@@ -1,0 +1,98 @@
+.sidebar-container {
+    position: fixed;
+    z-index: 101;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: #f4f4f4;
+    transform: translateX(-500px);
+    transition: .3s;
+}
+
+.sidebar-container.active {
+    transform: translateX(0);
+}
+
+.side-bar-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.side-bar-clode-btn {
+    background-color: transparent;
+    border: 0px solid transparent;
+    transition: .3s ease;
+    display: grid;
+    place-items: center;
+    height: 35px;
+    width: 35px;
+    border-radius: 10px;
+}
+
+.side-bar-clode-btn:hover {
+    background-color: #cdcdcd;
+    cursor: pointer;
+}
+
+.side-bar-logo {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.sidebar-nav-item {
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+    margin: 5px auto;
+    align-items: center;
+    height: 50px;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 5px;
+    transition: .3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-nav-item::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-200%, -50%);
+    transition: .8s ease;
+}
+
+.sidebar-nav-item:hover {
+    color: #fff;
+}
+
+.sidebar-nav-item:hover.sidebar-nav-item::before {
+    transform: translate(-50%, -50%);
+}
+
+.icon-container {
+    position: relative;
+    z-index: 10;
+}
+
+.icon-container svg {
+    display: block;
+    width: 20px;
+}
+
+.nav-name-container {
+    margin-left: 10px;
+    position: relative;
+    z-index: 10;
+}

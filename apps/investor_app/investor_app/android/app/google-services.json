@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1082719574823",
+    "project_id": "investor-app-vl821w",
+    "storage_bucket": "investor-app-vl821w.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082719574823:android:085c258fe1109378fd2702",
+        "android_client_info": {
+          "package_name": "com.mycompany.responsivedashboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082719574823-nqimpcm831901vvb5s9qdcfjiql9t9td.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkn7Ri-XqkjMiHfP54wQLSwOyixpRr0U0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082719574823-nqimpcm831901vvb5s9qdcfjiql9t9td.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1082719574823-7a8pvs1i8hfquinsr51beiag93guknv6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.responsivedashboard"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

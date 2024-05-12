@@ -50,7 +50,7 @@ const investAppPost = async (req, res, next) => {
         return res.status(500).send(
             {
                 status: 500,
-                message: 'Internal server error!',
+                message: 'Something went wrong!!',
                 error: error
             }
         )

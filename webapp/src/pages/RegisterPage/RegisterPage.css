@@ -1,0 +1,172 @@
+.register-page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.select-register-role {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.select-role-card {
+    color: #000;
+    text-decoration: none;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .1);
+    filter: drop-shadow(-5px -5px 0px #000);
+    display: block;
+    height: 150px;
+    width: 150px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: .3s ease;
+    border: 1px solid #000;
+}
+
+.already-have-account {
+    font-size: .9rem;
+    font-weight: 300;
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+    color: #000;
+}
+
+.already-have-account:hover {
+    border-bottom: 1px solid #000
+}
+
+.role-icon-container {
+    width: 50px;
+    height: 50px;
+}
+
+.select-role-card:hover {
+    box-shadow: none;
+}
+
+.select-role-card:hover {
+    filter: drop-shadow(5px 5px 0px #000);
+}
+
+.role-icon-container svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.role-text-container {
+    font-size: .8rem;
+    font-weight: bold;
+    margin-top: 10px;
+    letter-spacing: .1rem;
+}
+
+.overlay.active {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 101;
+    background-color: #f1f1f163;
+}
+
+.regitser-pop-up {
+    position: absolute;
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px;
+    height: 600px;
+    left: 50%;
+    top: 50%;
+    z-index: 102;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    transform: translate(-1000%, -1000%);
+    transition: .3s ease;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+form button {
+    display: block;
+    width: 100px;
+    height: 50px;
+    border: 2px solid transparent;
+    background-color: #2d2d2d;
+    border-radius: 10px;
+    margin: 10px auto;
+    color: #fff;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #fff;
+    color: #2d2d2d;
+}
+
+.investor-app-register.active, .project-app-register.active {
+    transform: translate(-50%, -50%) !important;
+}
+
+.close-button {
+    right: 10px;
+    top: 10px;
+    position: absolute;
+    border: 2px solid transparent;
+    display: block;
+    transition: .3s ease;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+}
+
+.close-button:hover {
+    border-color: #fff;
+}
+
+.regitser-pop-up h1 {
+    margin-top: 30px;
+    display: block;
+}
+
+.ip {
+    display: block;
+    width: 90%;
+    height: 40px;
+    background-color: #1919195e;
+    border: 1px solid #b7b7b7;
+    border-radius: 25px;
+    margin: 5px auto;
+    padding: 5px 10px;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+#subs {
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: #262626;
+    color: #b7b7b7;
+    border-radius: 10px;
+    margin: 10px auto;
+}

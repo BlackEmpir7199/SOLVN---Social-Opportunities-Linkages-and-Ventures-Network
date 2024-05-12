@@ -5,8 +5,8 @@ import { verifyThisUnknownApp } from "../../utils/verifyApp.mjs";
 
 const publishToAllInvestingApps = async (req, res, next) => {
     try {
-        const {projectAppId, projectAppName, projectName, projectOwner, projectTeam, projectEstimate, projectRevenueModel, projectContactInfo, projectDomain} = req.body;
-        if(projectAppId === undefined || projectAppName === undefined || projectName === undefined || projectOwner === undefined || projectTeam === undefined || projectEstimate === undefined ||  projectRevenueModel === undefined || projectContactInfo === undefined ||projectDomain === undefined){
+        const {projectAppId, projectAppName, projectName, projectOwner, projectTeam, projectEstimate, projectRevenueModel, projectContactInfo, projectDomain, projectDescription} = req.body;
+        if(projectAppId === undefined || projectAppName === undefined || projectName === undefined || projectOwner === undefined || projectTeam === undefined || projectEstimate === undefined ||  projectRevenueModel === undefined || projectContactInfo === undefined ||projectDomain === undefined || projectDescription === undefined){
             return res.status(400).send(
                 {
                     status: 400,
@@ -22,23 +22,24 @@ const publishToAllInvestingApps = async (req, res, next) => {
             let sendedApps = [];
             let failCount = 0;
             allInvestingApps.forEach(async (investorApp) => {
-                // const res = await axios.post(investorApp.investerPostProjects,{
-                //     projectDetail: {
-                //         'projectAppId': projectAppId,
-                //         'projectAppName': projectAppName,
-                //         'projectName': projectName,
-                //         'projectOwner': projectOwner,
-                //         'projectTeam': projectTeam,
-                //         'projectEstimate': projectEstimate,
-                //         'projectRevenueModel': projectRevenueModel,
-                //         'projectContactInfo': projectContactInfo
-                //     }
-                // });
-                // if(res.ok) {
-                //     sendedApps.push(investorApp.invAppName);
-                // }else{
-                //     failCount++;
-                // }
+                const res = await axios.post(investorApp.investerPostProjects,{
+                    projectDetail: {
+                        'projectAppId': projectAppId,
+                        'projectAppName': projectAppName,
+                        'projectName': projectName,
+                        'projectOwner': projectOwner,
+                        'projectTeam': projectTeam,
+                        'projectEstimate': projectEstimate,
+                        'projectRevenueModel': projectRevenueModel,
+                        'projectContactInfo': projectContactInfo,
+                        'projectDescription': projectDescription
+                    }
+                });
+                if(res.ok) {
+                    sendedApps.push(investorApp.invAppName);
+                }else{
+                    failCount++;
+                }
                 sendedApps.push(investorApp.invAppName);
             });
             return res.status(200).send({

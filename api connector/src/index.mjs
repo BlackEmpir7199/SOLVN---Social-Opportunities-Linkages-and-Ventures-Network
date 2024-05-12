@@ -15,6 +15,6 @@ app.use(logger);
 
 app.use('/api/v1', router);
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT, '0.0.0.0', () => {
     console.log(`Running on ${process.env.HOSTURL}:${process.env.PORT}`);
 })

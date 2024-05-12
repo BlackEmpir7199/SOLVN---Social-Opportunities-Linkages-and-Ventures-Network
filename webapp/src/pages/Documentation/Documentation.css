@@ -1,0 +1,46 @@
+.document-page {
+    margin-top: 90px;
+}
+
+.document-page h1 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.code-heading {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 15px;
+    background-color: #dddddd;
+}
+
+.code-req {
+    background-color: #fff;
+    width: max-content;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.code-body {
+    font-weight: bold;
+}
+
+.code-ans {
+    font-size: .9rem;
+    line-height: 1.5rem;
+    margin-left: 15px;
+}
+
+.code-ans span {
+    display: block;
+}
+
+.code-ans span:hover {
+    background-color: #c8c8c8;
+    cursor: pointer;
+}

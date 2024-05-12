@@ -105,7 +105,7 @@ const registerNewInvestingApp = async (req, res, next) => {
     
         return res.status(200).send(
             {
-                staus: 200,
+                stauts: 200,
                 message: "App investor created successfully!",
                 appInvId: thisGuyId
             }
@@ -114,7 +114,7 @@ const registerNewInvestingApp = async (req, res, next) => {
         return res.status(500).send(
             {
                 status: 500,
-                message: 'Internal server error!',
+                message: 'SOMETHING WENT WRONG!',
                 error: error
             }
         )

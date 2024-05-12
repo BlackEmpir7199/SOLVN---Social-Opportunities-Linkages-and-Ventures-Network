@@ -13,6 +13,7 @@ import { socialImpactScore } from "../controllers/projectApps/socialImpactScore.
 import { sendChat } from "../controllers/chat/sendChat.mjs";
 import { investorProjectDelete } from "../controllers/investingApps/investorProjectDelete.mjs";
 import { investAppROI } from "../controllers/investingApps/investAppROI.mjs";
+import { acceptProject } from "../controllers/investingApps/acceptProject.mjs";
 
 const router = express.Router();
 
@@ -30,6 +31,8 @@ router.patch('/invest/update', investAppPatchRequest);
 
 router.delete('/invest/projectDelete', investorProjectDelete)
 router.post('/invest/roi', investAppROI);
+
+router.post('/invest/ack', acceptProject);
 
 // For Project Apps
 router.post('/project/register', registerNewProjectApp);
